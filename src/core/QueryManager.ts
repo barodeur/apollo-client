@@ -938,7 +938,7 @@ export class QueryManager<TStore> {
       // In order to force delivery of an incomplete cache result with
       // loading:true, we tweak the fetchPolicy to include the cache, and
       // pretend that returnPartialData was enabled.
-      if (fetchPolicy !== "cache-first") {
+      if (fetchPolicy !== "cache-first" && fetchPolicy !== "no-cache") {
         fetchPolicy = "cache-and-network";
       }
       returnPartialData = true;
